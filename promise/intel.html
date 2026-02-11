@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Promise Day ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+.slide {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #fff;
+    transition: 0.8s ease-in-out;
+}
+
+.slide.active {
+    left: 0;
+}
+
+img {
+    max-width: 90%;
+    max-height: 80vh;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+button {
+    padding: 12px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 30px;
+    background: #ff4d6d;
+    color: white;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background: #e60039;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Slide 1 -->
+<div class="slide active" id="slide1">
+    <img src="promise 1.jpeg" alt="Promise Day">
+    <button onclick="nextSlide()">swipe kutta 😉 </button>
+</div>
+
+<!-- Slide 2 -->
+<div class="slide" id="slide2">
+    <img src="promise 2 image.jpeg" alt="Promise">
+    <h2 style="color:#ff4d6d;">Happy Promise Day 😁</h2>
+</div>
+
+<!-- Song -->
+<audio id="bgSong" src="promise song.mpeg"></audio>
+
+<script>
+function nextSlide() {
+    const slide1 = document.getElementById("slide1");
+    const slide2 = document.getElementById("slide2");
+    const song = document.getElementById("bgSong");
+
+    slide1.classList.remove("active");
+    slide2.classList.add("active");
+
+    // Wait for slide transition (0.8s) then play song
+    setTimeout(() => {
+        song.play();
+    }, 800);
+}
+</script>
+
+</body>
+</html>
